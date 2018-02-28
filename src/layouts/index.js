@@ -8,15 +8,20 @@ import Sidebar from '../components/Sidebar'
 import './index.css'
 import '../styles/layout-override.css'
 
+// was in Helmet
+// <!-- <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script> -->
+// was under header
+// <div data-netlify-identity-button>Login with Netlify Identity</div>
+
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
-      title="Gatsby Default Starter"
+      title="Cloudwan API Documentation"
       meta={[
-        { name: "description", content: "Sample" },
-        { name: "keywords", content: "sample, something" }
-      ]}
-    />
+        { name: "description", content: "Descriptions of API for documentation of CLOUDWAN" },
+        { name: "keywords", content: "documentation, api" }
+      ]}>
+    </Helmet>
     <Header />
     <div
       style={{
