@@ -1,13 +1,24 @@
-# gatsby-starter-default
-The default Gatsby starter
+# CLOUDWAN API Documentation
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/)
+Built using the starter Gatsby project, and adding features for Markdown and Netlify Identity.
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-```
-gatsby new gatsby-example-site
-```
+## Develop
+
+Type `npm run develop` on the command line to start a hot-reloading development server on localhost:5000.
+
+## Build
+
+Type `npm run build` on the command line to create a deployable copy of the website in the `public` folder.
 
 ## Deploy
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+Commit and push changes to see them updated on the Netlify site.
+
+## Differences from a Typical Gatsby Site
+
+This site places all of Gatsby output in a sub-folder of the public folder called `docs`.
+The point of doing this is so that visitor access can be controlled using the
+Netlify Identity Widget.  The top-level folder of the website contains the login capabilities
+and once authentication is complete, the user will be able to proceed into the `docs` sub-folder
+and run the Gatsby SPA that serves up all the Markdown.
+

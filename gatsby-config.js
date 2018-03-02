@@ -3,7 +3,7 @@ module.exports = {
   pathPrefix: `/docs`,
 
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `CLOUDWAN API Documentation`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

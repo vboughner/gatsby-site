@@ -1,0 +1,2 @@
+/docs/* /docs/* 200! Role=admin,editor,reader
+/docs/ /login.html 404
