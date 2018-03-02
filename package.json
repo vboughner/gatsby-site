@@ -19,8 +19,9 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
+    "prebuild": "rm -rf public",
     "build": "gatsby build --prefix-paths",
-    "postbuild": "mv public pubtmp && mkdir public && mv pubtmp public/docs",
+    "postbuild": "mv public pubtmp && mkdir public && mv pubtmp public/docs && cp outside/* public",
     "develop": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
