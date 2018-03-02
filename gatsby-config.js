@@ -1,4 +1,7 @@
 module.exports = {
+  // Note: pathPrefix must *not* have a trailing slash
+  pathPrefix: `/docs`,
+
   siteMetadata: {
     title: `Gatsby Default Starter`,
   },
