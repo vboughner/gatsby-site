@@ -6,7 +6,7 @@
     <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <p>It looks like you have arrived at the top of the site, you probably want to head over to the <a href="docs/index.html">docs</a> now.</p>
+  <p>It looks like you have arrived at the top of the site, you probably want to head over to the <a href="/docs/">docs</a> now.</p>
   <br />
   <!-- Add a menu:
    Log in / Sign up - when the user is not logged in
@@ -19,5 +19,13 @@
     Simple button that will open the modal.
   -->
   <div data-netlify-identity-button>Login with Netlify Identity</div>
+
+
+  <script type="text/javascript">
+      console.log('looks like your user is ');
+      console.log(window.netlifyIdentity.currentUser());
+  </script>
+
+
 </body>
 </html>
