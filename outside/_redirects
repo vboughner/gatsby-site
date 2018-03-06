@@ -1,2 +1,4 @@
 /docs/* /docs/index.html 200! Role=reader
 /docs /login.html 401
+/test/* /test/index.html 200! Role=reader
+/test /login.html 401
