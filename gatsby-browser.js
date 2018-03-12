@@ -4,9 +4,11 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-require("netlify-identity-widget/build/netlify-identity-widget");
+import netlifyIdentity from 'netlify-identity-widget'
 
-// netflify calls available, info from:
+// require("netlify-identity-widget/build/netlify-identity-widget");
+
+// netlify calls available, info from:
 // https://github.com/netlify/netlify-identity-widget
 //
 // netlifyIdentity.open(); // open the modal
