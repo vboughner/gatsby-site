@@ -1,4 +1,2 @@
-/docs/* 200! Role=reader
-/docs/ /login 404
 /test/* 200! Role=reader
 /test/ /login 404
