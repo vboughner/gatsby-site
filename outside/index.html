@@ -3,31 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>CLOUDWAN API Documentation</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-<p>It looks like you have arrived at the top of the site, you probably want to head over to the <a href="/docs/">docs</a> now.</p>
-<p>Or maybe you could head over to the <a href="/test/">test</a> folder instead, as it has simpler content.</p>
-<p>Or maybe you could head over to the <a href="/test2/">test2</a> folder instead, as it has simpler, unprotected, content.</p>
-  <br />
-  <!-- Add a menu:
-   Log in / Sign up - when the user is not logged in
-   Username / Log out - when the user is logged in
-  -->
-  <div data-netlify-identity-menu></div>
-  <br />
+<div id="logged-in" style="display: none">
+    <p>You are currently logged in as <span id="username"></span>, please proceed to the <a href="/docs/">API Documentation</a>.</p>
+    <p><a href="#" onclick="window.netlifyIdentity.open()">logout</a></p>
+</div>
+<div id="not-logged-in" style="display: none">
+    <p>You are not currently logged in, please <a href="#" onclick="window.netlifyIdentity.open()">login first</a>, before proceeding to the <a href="/docs/">API Documentation</a>.</p>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        window.netlifyIdentity.init();
 
-  <!-- Add a simpler button:
-    Simple button that will open the modal.
-  -->
-  <div data-netlify-identity-button>Login with Netlify Identity</div>
+        function updateLoggedIn() {
+            var loggedIn = false;
+            if (window.netlifyIdentity && window.netlifyIdentity.gotrue) {
+                var user = window.netlifyIdentity.gotrue.currentUser();
+                console.log('user is ', user);
+                loggedIn = user ? true : false;
+            }
 
+            if (loggedIn) {
+                $('#username').text(user.email);
+                $('#logged-in').show();
+                $('#not-logged-in').hide();
+            }
+            else {
+                $('#logged-in').hide();
+                $('#not-logged-in').show();
+                window.netlifyIdentity.open();
+            }
+        }
 
-  <script type="text/javascript">
-      console.log('looks like your user is ');
-      console.log(window.netlifyIdentity.currentUser());
-  </script>
+        window.netlifyIdentity.on("login", updateLoggedIn);
+        window.netlifyIdentity.on("logout", updateLoggedIn);
 
+        // TODO: add something to close the login window after login is successful
 
+        updateLoggedIn();
+    });
+</script>
 </body>
 </html>
