@@ -9,10 +9,13 @@
 <body>
 <div id="logged-in" style="display: none">
     <p>You are currently logged in as <span id="username"></span>, please proceed to the <a href="/docs/">API Documentation</a>.</p>
-    <p><a href="#" onclick="window.netlifyIdentity.open()">logout</a></p>
+    <p>You may also proceed to the <a href="/test/">test folder</a>, which requires the same role permissions.</p>
+    <p>Or you can <a href="#" onclick="window.netlifyIdentity.open()">Logout</a>.</p>
 </div>
 <div id="not-logged-in" style="display: none">
-    <p>You are not currently logged in, please <a href="#" onclick="window.netlifyIdentity.open()">login first</a>, before proceeding to the <a href="/docs/">API Documentation</a>.</p>
+    <p>You are not currently logged in, please <a href="#" onclick="window.netlifyIdentity.open()">login first</a>,
+        before proceeding to the <a href="/docs/">API Documentation</a> or <a href="/test/">test folder</a>.</p>
+    <p>You may also proceed to the <a href="/test2/">test2 folder</a>, which does not require the permissions.</p>
 </div>
 <script type="text/javascript">
     $(document).ready(function() {
