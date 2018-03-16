@@ -7,24 +7,40 @@ import Header from '../components/Header'
 import Sidebar from '../components/Sidebar'
 import './index.css'
 import '../styles/layout-override.css'
-import netlifyIdentity from "netlify-identity-widget";
+
+// import netlifyIdentity from "netlify-identity-widget";
 
 class TemplateWrapper extends React.Component {
   constructor(props) {
     super(props);
 
     // re-render whenever the user logs in or out to control content
+    /*
     netlifyIdentity.on("login", () => {
       this.forceUpdate();
     });
     netlifyIdentity.on("logout", () => {
       this.forceUpdate();
     });
+    */
   }
 
   render() {
-    let user = netlifyIdentity.gotrue.currentUser();
-    if (!user) {
+    // let user = netlifyIdentity.gotrue.currentUser();
+    // if (!user) {
+    let hideContent = false;
+
+    /*
+    console.log('checking for hideContent');
+    if (netlifyIdentity && netlifyIdentity.gotrue) {
+      console.log('setting hideContent');
+      hideContent = !netlifyIdentity.gotrue.currentUser()
+      console.log('hideContent set to ' + hideContent);
+    }
+    console.log('resulting hideContent ' + hideContent);
+    */
+
+    if (hideContent) {
       return (
         <div>
           <Helmet
